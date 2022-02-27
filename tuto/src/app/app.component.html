@@ -1,0 +1,25 @@
+<h1>hello world</h1>
+<p>
+  Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo amet architecto consequuntur placeat. Praesentium totam voluptates sint, veritatis provident alias perspiciatis unde omnis expedita optio. Doloremque nesciunt odio sit earum.
+</p>
+
+
+<!-- passing data from the TS file -->
+
+<h3> {{ username }} </h3>
+<h3> {{ year }} </h3>
+<p>{{ theDoorClosed }}</p>
+
+
+<!-- *ngFor -->
+
+<h3>Employees list:</h3>
+<!--<p>
+  {{ employees }}
+</p>-->
+
+<ul>
+
+  <li *ngFor="let e of employees"  > {{  e.firstname }} {{ e.lastname }} </li>
+
+</ul>
