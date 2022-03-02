@@ -1,0 +1,21 @@
+* application de gestion du parc automobile web et mobile
+* web:
+	- gestion des véehicules
+	- gestion des clients
+	- gestion intervention
+	- gestion des accord
+	- gestion des sinistres
+	- rechercha vehicule par client CIN ou Matriculation
+* mobile:
+	- auth employee
+	- recherche vehicule
+	- historique intervention vehicule
+	- consulter list des interventions
+	- executer des interventions ( debut / fin )
+
+-----------------------------------------------------------------------------
+* location long duré
+	- gestion des voitures
+	- gestion des clients
+	- gestions des locations
+	- gestion du maintenance des véhicules ( operations et cout )

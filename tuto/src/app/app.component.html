@@ -1,25 +1,108 @@
-<h1>hello world</h1>
+<!--<h1>hello world</h1>
 <p>
   Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo amet architecto consequuntur placeat. Praesentium totam voluptates sint, veritatis provident alias perspiciatis unde omnis expedita optio. Doloremque nesciunt odio sit earum.
 </p>
-
+-->
 
 <!-- passing data from the TS file -->
 
-<h3> {{ username }} </h3>
+<!--<h3> {{ username }} </h3>
 <h3> {{ year }} </h3>
-<p>{{ theDoorClosed }}</p>
+<p>{{ theDoorClosed }}</p>-->
 
 
 <!-- *ngFor -->
 
-<h3>Employees list:</h3>
+<!--<h3>Employees list:</h3>-->
 <!--<p>
   {{ employees }}
 </p>-->
-
+<!--
 <ul>
 
   <li *ngFor="let e of employees"  > {{  e.firstname }} {{ e.lastname }} </li>
 
+</ul>-->
+
+<!--**********************************************************************************-->
+
+<!-- *ngIf -->
+
+<!--
+<div   *ngIf=" toggleBlocks " >
+
+  <h1>title</h1>
+  <p>
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae corporis, inventore totam qui eius dignissimos maiores atque repellat, eaque illum nobis tempore voluptates reiciendis quo deserunt ipsam reprehenderit pariatur molestiae.
+  </p>
+</div>
+
+<div *ngIf=" ! toggleBlocks ">
+  <h1>title</h1>
+  <p>
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae corporis, inventore totam qui eius dignissimos maiores atque repellat, eaque illum nobis tempore voluptates reiciendis quo deserunt ipsam reprehenderit pariatur molestiae.
+  </p>
+  <p>
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae corporis, inventore totam qui eius dignissimos maiores atque repellat, eaque illum nobis tempore voluptates reiciendis quo deserunt ipsam reprehenderit pariatur molestiae.
+  </p>
+  
+</div>-->
+
+
+<!--<div  [innerHTML]="content" ></div>-->
+
+<!--<img [src]="photoURL" >-->
+
+
+<ul>
+  <li *ngFor="let e of employees" >
+    <!-- <h3 *ngIf="e.year < 2010" style="color: green;" >{{ e.name }}</h3>  -->
+    
+    
+    <!--<h3 [style.color]="    (e.year > 2010) ?  'orange'    :   'green'    " >{{ e.name }}</h3>-->
+
+     
+    <!-- ng class => add  -->
+    <h3 [ngClass]="(e.year > 2010) ?  'new-employee' : 'old-employee' " >{{ e.name }}</h3>
+
+    
+  </li>
 </ul>
+
+
+
+
+<!--***********************************************************************-->
+
+<h3>Today:</h3>
+
+<p>
+  {{ today | date:'medium' }}
+</p>
+
+<p>
+  {{ 12541326561 | currency:'TND' }}
+</p>
+
+<p>
+  {{ 5121512 | number }}
+</p>
+
+<p>
+  {{ 'hello world' | uppercase }}
+</p>
+
+<p>
+  {{ 'HELLO WORLD' | lowercase }}
+</p>
+
+
+<p>
+  {{ 'welcome to our app' | titlecase  }}
+</p>
+
+
+
+<p>
+  {{ emailAddress | email }}
+</p>
