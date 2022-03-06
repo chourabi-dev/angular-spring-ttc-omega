@@ -54,8 +54,8 @@
 <!--<img [src]="photoURL" >-->
 
 
-<ul>
-  <li *ngFor="let e of employees" >
+<!--<ul>
+  <li *ngFor="let e of employees" >-->
     <!-- <h3 *ngIf="e.year < 2010" style="color: green;" >{{ e.name }}</h3>  -->
     
     
@@ -63,17 +63,17 @@
 
      
     <!-- ng class => add  -->
-    <h3 [ngClass]="(e.year > 2010) ?  'new-employee' : 'old-employee' " >{{ e.name }}</h3>
+    <!--<h3 [ngClass]="(e.year > 2010) ?  'new-employee' : 'old-employee' " >{{ e.name }}</h3>-->
 
-    
+    <!--
   </li>
-</ul>
+</ul>-->
 
 
 
 
 <!--***********************************************************************-->
-
+<!--
 <h3>Today:</h3>
 
 <p>
@@ -105,4 +105,96 @@
 
 <p>
   {{ emailAddress | email }}
+</p>-->
+
+
+<!-- events -->
+<!--
+<button   (click)="likeClick()" >
+  {{nbrLikes}} 
+  {{ didLike == false ? 'Like' : 'Dislike' }}
+</button>-->
+
+
+<!--
+<div class="toolbar">
+
+  <div>
+    <input type="number" placeholder="font size"  (keyup)="sizeChanged($event)"  >
+  </div>
+  <div>
+    <select (change)="fontWeighChanged($event)"  >
+      <option value="1">Normal</option>
+      <option value="2">Bold</option>
+      
+    </select>
+  </div>
+
+  <div>
+    <button (click)="switchToODarkMode()" >
+      {{ darkMode == false ? 'switch to dark mode' : 'switch to light mode' }}
+    
+    </button>
+  </div>
+  
+</div>
+
+
+<div class="editor">
+  <textarea [style.fontSize]="fontSize"  [style.fontWeight]="fontWeight"  
+  
+  [ngClass]=" darkMode== true    ? 'dark-mode-editor' : '' " 
+  
+  
+  ></textarea>
+</div>-->
+
+
+<!--
+<div class="feild"  (mousemove)="mouseIsMovin($event)">
+  <div class="ball" [style.top]="y" [style.left]="x" ></div>
+</div>-->
+
+
+
+
+<!-- *********************** forms************************ -->
+
+
+<p>
+  {{ form.status }}
 </p>
+
+<form [formGroup]="form"  (ngSubmit)="submitForm()" >
+
+  <div>
+    <label for="">Username  
+      
+      <span class="text-danger" 
+      
+      *ngIf=" form.controls.username.valid == false " >
+      
+      *
+    
+    </span> 
+    
+    </label>
+    <input type="text"  formControlName="username"  >
+
+  </div>
+  <div>
+    <label for="">password  <span class="text-danger" *ngIf=" form.controls.password.valid == false " >*</span>  </label>
+    <input type="password"  formControlName="password" >
+  </div>
+  <div>
+    <label for="">email  <span class="text-danger" *ngIf=" form.controls.email.valid == false " >*</span>  </label>
+    <input type="email"  formControlName="email" >
+  </div>
+  
+
+  <div>
+    <button type="submit"  [disabled]=" ! form.valid" >submit</button>
+  </div>
+  
+
+</form>

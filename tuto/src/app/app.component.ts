@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, ElementRef, OnInit } from '@angular/core';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Employee } from './models/Employee';
 
 @Component({
@@ -6,7 +7,7 @@ import { Employee } from './models/Employee';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
   
   /*username:string="chourbai";
   email="tchourabi@gmail.com";
@@ -56,7 +57,7 @@ employees:any[] = [
 
 /************************************************** */
 
-
+/*
 today:Date = new Date();
 
 
@@ -69,6 +70,125 @@ test(){
 
 formatDate(date:Date){
   return date.getFullYear() +'/'+(date.getMonth()+1)+'/'+date.getDate()
+}*/
+
+
+
+
+/************************events *******************************************/
+
+/*
+nbrLikes:number = 12;
+didLike : boolean = false;
+
+
+
+likeClick(){
+ 
+
+  if (this.didLike == false) {
+    this.nbrLikes++;
+  }else{
+    this.nbrLikes--;
+  }
+  
+
+  this.didLike = ! this.didLike;
 }
+*/
+
+
+
+/******** editor ********** */
+
+/*
+fontSize:string = '12px';
+fontWeight: string = 'normal';
+darkMode:boolean = false;
+
+
+switchToODarkMode(){
+  this.darkMode = ! this.darkMode;
+}
+
+
+sizeChanged(event){
+  const val = event.target.value;
+
+  console.log(val);
+
+  
+
+  if (val != '') {
+    this.fontSize = val+'px';
+  }else{
+    this.fontSize = '12px';
+  }
+  
+  
+}
+
+
+
+fontWeighChanged(event){
+  const val = event.target.value;
+
+  if (val == "1") {
+    this.fontWeight = 'normal'
+  }else{
+    this.fontWeight='bold'
+  }
+}
+
+
+x:string='0px';
+y:string='0px';
+
+
+mouseIsMovin(event){
+  console.log(event);
+
+  const x = event.clientX;
+  const y = event.clientY;
+  
+  this.x=x+'px';
+  this.y = y+'px';
+  
+}
+*/
+
+
+
+/******************************************froms************************************ */
+
+
+
+form = new FormGroup({
+  username : new FormControl('',[Validators.required,Validators.minLength(8)]),
+  password : new FormControl('',Validators.required),
+  email : new FormControl('',[Validators.required, Validators.email]),
+  
+  
+})
+
+
+submitForm(){
+  console.log("submited...");
+
+  // get the data from the form
+
+  const val = this.form.value;
+
+  console.log(val);
+}
+
+
+  constructor(){}
+
+
+  ngOnInit(): void {
+    console.log(this.form);
+    
+  }
 
 }
