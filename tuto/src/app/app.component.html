@@ -160,7 +160,7 @@
 
 <!-- *********************** forms************************ -->
 
-
+<!-- 
 <p>
   {{ form.status }}
 </p>
@@ -197,4 +197,74 @@
   </div>
   
 
-</form>
+</form> -->
+
+
+
+<!-- nested forms -->
+
+
+
+
+<!-- 
+
+
+ 
+<div class="container mt-5">
+
+
+  <form [formGroup]="form" (ngSubmit)="saveUser()">
+
+
+
+    <section formGroupName="basicInfo" *ngIf="steps == 1"  >
+      <div class="form-group">
+        <label for="">fullanme</label>
+        <input type="text" class="form-control" formControlName="fullname">
+      </div>
+      <div class="form-group">
+        <label for="">Email</label>
+        <input type="text" class="form-control" formControlName="email">
+      </div>
+      <div class="form-group">
+        <label for="">Phone</label>
+        <input type="text" class="form-control" formControlName="phone">
+      </div>
+  
+      <button type="button" [disabled]=" ! form.controls.basicInfo.valid " (click)="nextgroupForm()" >next</button>
+    </section>
+    
+
+    <section formGroupName="address"  *ngIf="steps == 2" >
+
+ 
+
+      <div class="form-group">
+        <label for="">city</label>
+        <input type="text" class="form-control" formControlName="city">
+      </div>
+      
+      <div class="form-group">
+        <label for="">state</label>
+        <input type="text" class="form-control" formControlName="state">
+      </div>
+      
+      <div class="form-group">
+        <label for="">zip code</label>
+        <input type="text" class="form-control" formControlName="zipcode">
+      </div>
+    </section>
+
+
+    <button class="btn btn-success" type="submit" *ngIf="steps == 2"  [disabled]="! form.valid" >save</button>
+    
+  </form>
+
+</div>
+-->
+
+
+
+<!-- componenets -->
+
+<router-outlet></router-outlet>

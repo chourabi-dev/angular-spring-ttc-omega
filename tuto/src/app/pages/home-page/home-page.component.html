@@ -1,0 +1,19 @@
+<app-navbar></app-navbar>
+<div class="container mt-5">
+  <div class="row">
+    <div class="col-sm-3">
+      <app-sidemenu></app-sidemenu>
+    </div>
+    <div class="col-sm-9">
+      <div class="row">
+
+
+
+        <div class="col-sm-6" *ngFor="let a of articles">
+          <app-article  [description]="a.description" [title]="a.title" [photoURL]="a.photoURL"     ></app-article>
+        </div>  
+        
+      </div>
+    </div>
+  </div>
+</div>

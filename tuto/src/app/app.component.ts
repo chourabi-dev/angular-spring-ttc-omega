@@ -163,7 +163,8 @@ mouseIsMovin(event){
 
 
 
-form = new FormGroup({
+/**
+ * form = new FormGroup({
   username : new FormControl('',[Validators.required,Validators.minLength(8)]),
   password : new FormControl('',Validators.required),
   email : new FormControl('',[Validators.required, Validators.email]),
@@ -190,5 +191,59 @@ submitForm(){
     console.log(this.form);
     
   }
+ */
 
+
+
+  steps:number = 1;
+
+  form = new FormGroup({ 
+
+    basicInfo : new FormGroup({
+      fullname : new FormControl('',Validators.required),
+      email : new FormControl('',Validators.required),
+      phone : new FormControl('',Validators.required),
+  
+    }), 
+    address :  new FormGroup({
+      city : new FormControl('',Validators.required),
+      state : new FormControl('',Validators.required),
+      zipcode : new FormControl('',Validators.required), 
+        
+    })
+    
+    
+  })
+
+
+
+  articles:any[] = [
+    { title:"expmlt title 1", description:"descrption artcile 1" , photoURL:'https://ichef.bbci.co.uk/news/820/cpsprodpb/C5AF/production/_123670605_microsoftteams-image-1.png' },
+    { title:"expmlt title 2", description:"descrption artcile 2" , photoURL:'https://ichef.bbci.co.uk/news/820/cpsprodpb/C5AF/production/_123670605_microsoftteams-image-1.png' },
+    
+  ]
+
+
+
+  constructor(){}
+
+
+  ngOnInit(): void {
+     console.log(this.form);
+    
+    
+  }
+
+
+  nextgroupForm(){
+    this.steps++;
+  }
+
+
+  saveUser(){
+    const val = this.form.value;
+
+    console.log(val);
+    
+  }
 }
