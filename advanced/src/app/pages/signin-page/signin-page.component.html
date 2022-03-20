@@ -1,0 +1,15 @@
+<form [formGroup]="form" (ngSubmit)="submitConnectForm()">
+
+    <div>
+        <label for="">username</label><br>
+        <input type="text" formControlName="username">
+    </div>
+    <div>
+        <label for="">password</label><br>
+        <input type="text" formControlName="password">
+    </div>
+
+    <button type="submit">connect</button>
+    
+
+</form>

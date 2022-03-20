@@ -1,0 +1,12 @@
+
+<h3>Products</h3>
+
+<p> you have {{ cartArray.length }} product in your cart. <a routerLink="/cart">go to checkout</a> </p>
+
+<ul>
+    <li  *ngFor="let p of products">
+        <h3>{{ p.name }}</h3>
+
+        <button (click)="saveProduct(p)" >add to cart</button>
+    </li>
+</ul>

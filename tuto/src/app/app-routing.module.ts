@@ -11,7 +11,6 @@ const routes: Routes = [
   { path:'', component:HomePageComponent },
   { path:'home' , component: HomePageComponent },
   { path:'about' , component: AboutPageComponent , children: [
-
     { path:'team', component: TeamPageComponent   },
     { path:'projects', component: ProjectsPageComponent }, 
 

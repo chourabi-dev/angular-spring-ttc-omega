@@ -1,0 +1,11 @@
+<h3>Products</h3>
+
+<p> you have {{ ShoppingProduct.length }} product in your cart. </p>
+
+<ul>
+    <li  *ngFor="let p of ShoppingProduct">
+        <h3>{{ p.name }}</h3>
+
+       
+    </li>
+</ul>
