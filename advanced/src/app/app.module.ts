@@ -12,6 +12,7 @@ import { SigninPageComponent } from './pages/signin-page/signin-page.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ProductsPageComponent } from './pages/products-page/products-page.component';
 import { CartPageComponent } from './pages/cart-page/cart-page.component';
+import { NewTypesComponent } from './new-types/new-types.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { CartPageComponent } from './pages/cart-page/cart-page.component';
     NotFoundPageComponent,
     SigninPageComponent,
     ProductsPageComponent,
-    CartPageComponent
+    CartPageComponent,
+    NewTypesComponent
   ],
   imports: [
     BrowserModule,
