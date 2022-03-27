@@ -1,0 +1,14 @@
+
+<h1 *ngIf=" isLoading == true ">Please wait...</h1>
+
+<p class="danger" *ngIf="errorMSG != '' ">{{errorMSG}} <br>
+
+  <button (click)="initDATA()" >refrech</button>
+</p>
+
+<ul>
+  <li *ngFor="let u of users">
+    <h3>{{ u.name }}</h3>
+    <p> <small>{{ u.email }} / {{ u.phone }}</small> </p>
+  </li>
+</ul>

@@ -14,7 +14,7 @@ export class NewTypesComponent implements OnInit {
 
   ngOnInit(): void {
    
-    if (navigator.geolocation != null) {
+    /*if (navigator.geolocation != null) {
       this.geolocalisationWatch().subscribe((data)=>{
         console.log(data);
         
@@ -23,7 +23,12 @@ export class NewTypesComponent implements OnInit {
         console.log(error); 
        }
        )
-    }
+    }*/
+
+
+    // HTTP GET POST PUT
+    this.geolocalisationWatch().toPromise().then().catch(); 
+
   }
 
 
