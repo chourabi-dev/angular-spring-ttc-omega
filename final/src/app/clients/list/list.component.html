@@ -1,0 +1,71 @@
+<div class="container-fluid">
+
+    <div class="d-sm-flex align-items-center justify-content-between mb-4">
+        <h1 class="h3 mb-0 text-gray-800">Clients</h1>
+
+        <a routerLink="/clients/add" class="btn btn-sm btn-primary"><i class="fa fa-plus"></i> add</a>
+    </div>
+
+
+    <div class="row">
+        <div class="col-12">
+            <div class="card mb-4">
+                <div class="card-header">
+                    Clients list
+                </div>
+                <div class="card-body">
+
+                        <div class="alert alert-info mb-3" *ngIf="msg!='' ">
+                            {{msg}}
+                        </div>
+
+                        <div class="table-responsive">
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th>#</th>
+                                        <th>First name</th>
+                                        <th>Last name</th>
+                                        <th>Email</th>
+                                        <th>Cin</th>
+                                        <th>Address</th> 
+                                        <th>Vehicules</th> 
+                                        <th>Actions</th> 
+                                        
+                                    </tr>
+                                </thead>
+    
+                                <tbody>
+                                    <tr *ngFor="let c of clients">
+                                        <td>{{c.id}}</td>
+                                        <td>{{c.nom}}</td>
+                                        <td>{{c.prenom}}</td>
+                                        <td>{{c.email}}</td>
+                                        <td>{{c.cin}}</td>
+                                        <td>{{c.address}}</td> 
+                                        <td>
+                                            <ul>
+                                                <li *ngFor="let v of c.vehicules">{{ v.mark }} {{ v.model }}</li>
+                                            </ul>
+                                        </td>
+    
+                                        <td>
+                                            <a [routerLink]="'/clients/update/'+c.id" class="btn btn-sm btn-primary">update</a>
+    
+                                            <button class="btn btn-danger btn-sm" (click)="deleteClient(c.id)">delete</button>
+                                        </td>
+                                        
+                                        
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+
+
+</div>
