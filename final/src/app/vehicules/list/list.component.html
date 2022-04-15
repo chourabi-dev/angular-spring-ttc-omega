@@ -1,0 +1,78 @@
+<div class="container-fluid">
+
+    <div class="d-sm-flex align-items-center justify-content-between mb-4">
+        <h1 class="h3 mb-0 text-gray-800">Vehicules</h1>
+
+        <a routerLink="/vehicules/add" class="btn btn-sm btn-primary"><i class="fa fa-plus"></i> add</a>
+    </div>
+
+
+    <div class="row">
+        <div class="col-12">
+            <div class="card mb-4">
+                <div class="card-header">
+                    Vehicules list
+                </div>
+                <div class="card-body"> 
+                        <div class="table-responsive">
+                            <table class="table">
+                                <thead>
+
+
+
+
+                                    <tr>
+                                        <th>#</th> 
+                                        <th>Mark</th> 
+                                        <th>Model</th> 
+                                        <th>Color</th> 
+                                        <th>Matricul</th> 
+                                        <th>Interventions</th>
+                                        <th>status</th>
+                                        
+
+                                        
+                                        <th>Actions</th> 
+                                        
+                                    </tr>
+                                </thead>
+    
+                                <tbody>
+                                    <tr *ngFor="let v of vehicules">
+                                        <td>{{v.id}}</td>  
+                                        <td>{{v.mark}}</td>  
+                                        <td>{{v.model}}</td>  
+                                        <td>
+                                            <div class="vehicule-color" [style.backgroundColor]="v.color" ></div>
+                                        </td>  
+                                        <td>{{v.matricule}}</td>  
+                                        
+                                        <td>
+                                            <span class="badge bg-info text-white"> {{v.interventions.length}} intervention(s)</span>
+                                        </td>
+                                        <td>
+                                            <span class="badge bg-warning text-white"> 
+                                                {{ v.status == 0 ? 'stand by' : 'en cours...' }}
+                                            </span>
+                                        </td>
+                                        
+    
+                                        
+                                        <td>
+                                           <a [routerLink]="'/vehicules/details/'+v.id" class="btn btn-sm btn-success">Historic</a>
+                                        </td>
+                                        
+                                        
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+
+
+</div>

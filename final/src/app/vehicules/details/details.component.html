@@ -1,0 +1,29 @@
+<div class="container-fluid text-center" *ngIf="data == null ">
+    <div class="spinner-border" role="status">
+        <span class="visually-hidden"></span>
+      </div>
+</div>
+
+
+<div class="container-fluid" *ngIf="data != null ">
+
+
+    <a class="add-intervention" [routerLink]="'/vehicules/details/add-intervention/'+id">Add intervention</a>
+    
+
+    <h1>{{ data.mark }} {{ data.model }}</h1>
+    <p class="text-muted">{{ data.matricule }}</p>
+
+
+    <hr>
+
+
+    <div  class="card" *ngFor="let i of data.interventions" >
+        <div class="card-body">
+            <h3>{{ i.category.libelle }}</h3>
+            <p class="text-muted">{{i.description}}</p>
+            <p class="text-muted"><small>{{i.date}}</small></p>
+            
+        </div>
+    </div>
+</div>
