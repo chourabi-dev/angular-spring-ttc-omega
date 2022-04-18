@@ -1,0 +1,21 @@
+<h3>Authentification</h3>
+
+<form [formGroup]="formData" (ngSubmit)="authUser()">
+ 
+ 
+    <div>
+        <label for="">username</label><br>
+        <input type="text" formControlName="username">
+    </div>  
+    <div>
+        <label for="">password</label><br>
+        <input type="password" formControlName="password">
+    </div>
+ 
+
+    <button type="submit">connect</button>
+
+
+</form>
+
+<a routerLink="/signup">create account</a>

@@ -1,0 +1,34 @@
+<p>signup works!</p>
+
+<form [formGroup]="formData" (ngSubmit)="createUser()">
+ 
+
+    <div>
+        <label for="">name</label><br>
+        <input type="text" formControlName="name">
+    </div>
+    <div>
+        <label for="">username</label><br>
+        <input type="text" formControlName="username">
+    </div>
+
+    <div>
+        <label for="">email</label><br>
+        <input type="text" formControlName="email">
+    </div>
+
+    <div>
+        <label for="">password</label><br>
+        <input type="password" formControlName="password">
+    </div>
+
+    <div>
+        <label for="">cindId</label><br>
+        <input type="text" formControlName="cindId">
+    </div>
+
+
+    <button type="submit">create account</button>
+
+
+</form>
